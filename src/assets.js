@@ -1,27 +1,29 @@
 // Asset paths configuration
 // Update these paths when you add your actual media files
 
+const BASE_PATH = import.meta.env.MODE === 'production' ? '/otawanta-website' : '';
+
 export const ASSETS = {
   // Logo and branding
-  logo: '/icons/logo.jpeg',
-  logoWhite: '/icons/logo.jpeg',
-  favicon: '/icons/favicon.ico',
+  logo: `${BASE_PATH}/icons/logo.jpeg`,
+  logoWhite: `${BASE_PATH}/icons/logo.jpeg`,
+  favicon: `${BASE_PATH}/icons/favicon.ico`,
 
   // Hero section
   hero: {
-    backgroundImage: '/images/hero/hero-bg.png',
-    artistPhoto: '/images/hero/artist-photo.jpg',
-    videoBackground: '/videos/hero-background.mp4',
+    backgroundImage: `${BASE_PATH}/images/hero/hero-bg.png`,
+    artistPhoto: `${BASE_PATH}/images/hero/artist-photo.jpg`,
+    videoBackground: `${BASE_PATH}/videos/hero-background.mp4`,
   },
 
   // Gallery/Visual section
   gallery: [
-    '/images/gallery/gallery-1.jpg',
-    '/images/gallery/gallery-2.jpg',
-    '/images/gallery/gallery-4.JPG',
-    '/images/gallery/gallery-5.JPG',
-    '/images/gallery/gallery-6.JPG',
-    '/images/gallery/gallery-1.jpg', // Using gallery-1 as fallback for 6th slot
+    `${BASE_PATH}/images/gallery/gallery-1.jpg`,
+    `${BASE_PATH}/images/gallery/gallery-2.jpg`,
+    `${BASE_PATH}/images/gallery/gallery-4.JPG`,
+    `${BASE_PATH}/images/gallery/gallery-5.JPG`,
+    `${BASE_PATH}/images/gallery/gallery-6.JPG`,
+    `${BASE_PATH}/images/gallery/gallery-1.jpg`, // Using gallery-1 as fallback for 6th slot
   ],
 
   // Merchandise
@@ -29,22 +31,22 @@ export const ASSETS = {
     {
       id: 1,
       name: 'OTAWANTA Black Tee',
-      image: '/images/merch/black-tee.jpg',
+      image: `${BASE_PATH}/images/merch/black-tee.jpg`,
     },
     {
       id: 2,
       name: 'Minimal Logo Cap',
-      image: '/images/merch/logo-cap.jpg',
+      image: `${BASE_PATH}/images/merch/logo-cap.jpg`,
     },
     {
       id: 3,
       name: 'Limited Edition Vinyl',
-      image: '/images/merch/vinyl.jpg',
+      image: `${BASE_PATH}/images/merch/vinyl.jpg`,
     },
     {
       id: 4,
       name: 'Tech House Hoodie',
-      image: '/images/merch/hoodie.jpg',
+      image: `${BASE_PATH}/images/merch/hoodie.jpg`,
     },
   ],
 
@@ -53,36 +55,36 @@ export const ASSETS = {
     {
       id: 1,
       title: 'OTAWANTA - Deep Vibes Live Set',
-      thumbnail: '/images/gallery/video-thumb-1.jpg',
-      videoFile: '/videos/live-set-1.mp4',
+      thumbnail: `${BASE_PATH}/images/gallery/video-thumb-1.jpg`,
+      videoFile: `${BASE_PATH}/videos/live-set-1.mp4`,
     },
     {
       id: 2,
       title: 'Studio Sessions - Behind the Scenes',
-      thumbnail: '/images/gallery/video-thumb-2.jpg',
-      videoFile: '/videos/studio-session.mp4',
+      thumbnail: `${BASE_PATH}/images/gallery/video-thumb-2.jpg`,
+      videoFile: `${BASE_PATH}/videos/studio-session.mp4`,
     },
   ],
 
   // Audio/Music
   audio: {
-    backgroundMusic: '/audio/ambient-background.mp3',
+    backgroundMusic: `${BASE_PATH}/audio/ambient-background.mp3`,
     trackPreviews: [
-      '/audio/track-1-preview.mp3',
-      '/audio/track-2-preview.mp3',
-      '/audio/track-3-preview.mp3',
+      `${BASE_PATH}/audio/track-1-preview.mp3`,
+      `${BASE_PATH}/audio/track-2-preview.mp3`,
+      `${BASE_PATH}/audio/track-3-preview.mp3`,
     ],
   },
 
   // Contact/Background images
   contact: {
-    backgroundImage: '/images/gallery/gallery-2.jpg',
+    backgroundImage: `${BASE_PATH}/images/gallery/gallery-2.jpg`,
   },
 
   // Social media placeholder images
   social: {
-    spotifyPlaylist: '/images/spotify-playlist-cover.jpg',
-    youtubeChannelArt: '/images/youtube-channel-art.jpg',
+    spotifyPlaylist: `${BASE_PATH}/images/spotify-playlist-cover.jpg`,
+    youtubeChannelArt: `${BASE_PATH}/images/youtube-channel-art.jpg`,
   }
 };
 
