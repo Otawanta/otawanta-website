@@ -5,8 +5,8 @@ const BASE_PATH = import.meta.env.MODE === 'production' ? '/otawanta-website' : 
 
 export const ASSETS = {
   // Logo and branding
-  logo: `${BASE_PATH}/icons/logo_black_whiteBG.png`,
-  logoWhite: `${BASE_PATH}/icons/logo_black_whiteBG.png`,
+  logo: `${BASE_PATH}/icons/logo_black_whiteBG.jpg`,
+  logoWhite: `${BASE_PATH}/icons/logo_black_whiteBG.jpg`,
   favicon: `${BASE_PATH}/icons/favicon.ico`,
 
   // Hero section
