@@ -13,7 +13,7 @@ const socialLinks = [
   { 
     name: 'YouTube', 
     icon: Youtube, 
-    url: 'https://youtube.com/@otawanta',
+    url: 'https://youtube.com/@otawanta7456',
     color: 'from-red-600 to-red-700'
   },
   { 
