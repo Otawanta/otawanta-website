@@ -51,19 +51,35 @@ export default function ContactForm({ setActiveSection }) {
     setIsSubmitting(true);
 
     try {
-      // Simulate form submission for demo purposes
-      await new Promise(resolve => setTimeout(resolve, 2000));
+
+      const FORMSPREE_URL = 'https://formspree.io/f/mvgeovbd';
       
-      console.log('Form submitted:', formData);
-      
-      setIsSubmitted(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
+      const response = await fetch(FORMSPREE_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000);
+      } else {
+        throw new Error('Failed to send message');
+      }
     } catch (error) {
       console.error('Error sending email:', error);
+      alert('Failed to send message. Please try again.');
     }
 
     setIsSubmitting(false);
@@ -141,6 +157,7 @@ export default function ContactForm({ setActiveSection }) {
                 <div>
                   <Input
                     type="text"
+                    name="name"
                     placeholder="Your Name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -151,6 +168,7 @@ export default function ContactForm({ setActiveSection }) {
                 <div>
                   <Input
                     type="email"
+                    name="email"
                     placeholder="Your Email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -163,6 +181,7 @@ export default function ContactForm({ setActiveSection }) {
               <div>
                 <Input
                   type="text"
+                  name="subject"
                   placeholder="Subject"
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
@@ -173,6 +192,7 @@ export default function ContactForm({ setActiveSection }) {
               
               <div>
                 <Textarea
+                  name="message"
                   placeholder="Your Message"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
